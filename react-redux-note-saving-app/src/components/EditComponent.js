@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '../css/AllNotes.css';
-import '../css/Note.css';
+import { NoteForms, NoteFormInput, NoteFormTextarea} from '../styled-components/NoteFormStyle';
+import {Notes} from '../styled-components/NoteStyle';
+import {SaveFormButton} from '../styled-components/GeneralStyle'
+
 
 
 class EditComponent extends Component {
@@ -17,15 +19,15 @@ handleEdit = (e) => {
 }
 render() {
 return (
-<div key={this.props.note.id} className="post">
-  <form className="form" onSubmit={this.handleEdit}>
-    <input required type="text" ref={(input) => this.getTitle = input}
-    defaultValue={this.props.note.title} placeholder="Enter Post Title" /><br /><br />
-    <textarea required rows="5" ref={(input) => this.getContent = input}
-    defaultValue={this.props.note.notecontent} cols="28" placeholder="Enter Post" /><br /><br />
-    <button>Update</button>
-  </form>
-</div>
+<Notes key={this.props.note.id}>
+  <NoteForms onSubmit={this.handleEdit}>
+    <NoteFormInput required type="text" ref={(input) => this.getTitle = input}
+    defaultValue={this.props.note.title} placeholder="Enter note Title" /><br /><br />
+    <NoteFormTextarea required rows="5" ref={(input) => this.getContent = input}
+    defaultValue={this.props.note.notecontent} cols="28" placeholder="Enter note" /><br /><br />
+    <SaveFormButton>Update</SaveFormButton>
+  </NoteForms>
+</Notes>
 );
 }
 }

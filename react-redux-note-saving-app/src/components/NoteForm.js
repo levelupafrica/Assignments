@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 import {connect} from 'react-redux';
-import '../css/Note.css';
+import { NoteContnainer, NoteForms, NoteFormInput, NoteFormTextarea, NoteHeading } from '../styled-components/NoteFormStyle';
+import {SaveFormButton} from '../styled-components/GeneralStyle';
 
 
 class NoteForm extends Component {
@@ -24,14 +25,14 @@ class NoteForm extends Component {
     }
     render(){
         return(
-            <div className="note-container">
-                <h1 className="note_heading">Create Note</h1>
-                <form className="form" onSubmit = {this.handleFormSubmit}>
-                    <input required type="text" placeholder="Enter Note Title" ref={(input)=>this.getTitle = input}/><br /><br />
-                    <textarea required rows="5" cols="28" placeholder="Enter Note Information" ref={(input)=>this.getContent = input}/><br /><br />
-                    <button>Save Note</button>
-                </form>
-             </div>  
+            <NoteContnainer>
+                <NoteHeading>Create Note</NoteHeading>
+                <NoteForms onSubmit = {this.handleFormSubmit}>
+                    <NoteFormInput required type="text" placeholder="Enter Note Title" ref={(input)=>this.getTitle = input}/><br /><br />
+                    <NoteFormTextarea required rows="5" cols="28" placeholder="Enter Note Information" ref={(input)=>this.getContent = input}/><br /><br />
+                    <SaveFormButton>Save Note</SaveFormButton>
+               </NoteForms>
+             </NoteContnainer>
         ); 
     }    
 }
