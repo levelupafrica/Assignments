@@ -1,13 +1,10 @@
 function VowelSquare(strArr) { 
-    for(let i = 1; i < strArr.length; i++) {
-          for(let j = 0; j < strArr[i].length; j++) {
-              let search1 = /[aeiou][aeiou]/.exec(strArr[i].slice(j));
-              let search2 = /[aeiou][aeiou]/.exec(strArr[i-1].slice(j));
-              if(search1 !== null && search2 !== null && search1.index === search2.index ) {
-                return (i-1).toString() + "-" +  (search2.index+j).toString();
-              }
-          }
+  for (i = 0; i < strArr.length-1; i++){
+    for(j = 0; j < strArr[0].length-1; j++){
+      if (strArr[i][j].match(/a|e|i|o|u/) && strArr[i][j+1].match(/a|e|i|o|u/) && strArr[i+1][j].match(/a|e|i|o|u/) && strArr[i+1][j+1].match(/a|e|i|o|u/)) { 
+      return res = i+"-"+j }
     }
-    return "not found"; 
+  }
+  return "not found"
   }
   VowelSquare(readline());
