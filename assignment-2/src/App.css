@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: gainsboro;
+}
+.Container {
+  text-align: center;
+  background-color: yellowgreen;
+  margin: auto;
+  margin-top: 6%;
+  width: 30%;
+  color: gainsboro;
+  padding-bottom: 5%;
+
+}
+
+.Header {
+  padding-bottom: 20%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 150%;
+}
+
+.Container label {
+  font-size: 150%;
+}
+
+.Container input {
+  text-align: center;
+  font-size: 2em;
+}
+
+.AppButton {
+  padding: 2%;
+  margin: 2%;
+  background-color: brown;
+  color: gainsboro;
+  font-size: 2em;
+}
